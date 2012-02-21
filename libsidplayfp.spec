@@ -4,11 +4,11 @@
 %define develnamestatic %mklibname sidplayfp -d -s
 
 Name:           libsidplayfp
-Version:        0.3.2
+Version:        0.3.3
 Release:        1
 License:        GPLv2
 Url:		http://sourceforge.net/projects/sidplay-residfp
-Source0:	http://downloads.sourceforge.net/project/sidplay-residfp/libsidplayfp/0.3.2/libsidplayfp-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/project/sidplay-residfp/libsidplayfp/0.3.3/libsidplayfp-%{version}.tar.gz
 Group:		System/Libraries
 Summary:        A library for the sidplay2 fork with resid-fp
 
