@@ -88,3 +88,14 @@ find %{buildroot} -type f -name '*.la' -exec rm -f {} \;
 
 %files -n %{develnamestatic}
 %{_libdir}/*.a
+
+
+%changelog
+* Tue Feb 21 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.3.3-1
++ Revision: 778541
+- version update 0.3.3
+
+* Fri Jan 20 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.3.2-1
++ Revision: 763359
+- imported package libsidplayfp
+
