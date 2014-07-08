@@ -4,11 +4,11 @@
 %define develnamestatic %mklibname sidplayfp -d -s
 
 Name:           libsidplayfp
-Version:        0.3.3
-Release:        1
+Version:        1.0.3
+Release:        2
 License:        GPLv2
 Url:		http://sourceforge.net/projects/sidplay-residfp
-Source0:	http://downloads.sourceforge.net/project/sidplay-residfp/libsidplayfp/0.3.3/libsidplayfp-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/project/sidplay-residfp/libsidplayfp/1.0/libsidplayfp-%{version}.tar.gz
 Group:		System/Libraries
 Summary:        A library for the sidplay2 fork with resid-fp
 
@@ -70,32 +70,13 @@ find %{buildroot} -type f -name '*.la' -exec rm -f {} \;
 #%{_bindir}/%{name}
 
 %files -n %{libname}
-%{_libdir}/libsidplayfp-hardsid.so.0*
-%{_libdir}/libsidplayfp-resid.so.0.*
-%{_libdir}/libsidplayfp-residfp.so.*
-%{_libdir}/libsidplayfp.so.2*
-%{_libdir}/libsidplayfp-resid.so.0
+%{_libdir}/*.so.*
 
 
 %files -n %{libnamedev}
-%{_includedir}/sidplayfp/*.h
-%{_includedir}/sidplayfp/builders/*.h
-%{_libdir}/libsidplayfp-hardsid.so
-%{_libdir}/libsidplayfp.so
-%{_libdir}/libsidplayfp-resid.so
-%{_libdir}/pkgconfig/libsidplayfp.pc
-%{_libdir}/libsidplayfp-residfp.so
+%{_includedir}/*
+%{_libdir}/*.so
+%{_libdir}/pkgconfig/*.pc
 
 %files -n %{develnamestatic}
 %{_libdir}/*.a
-
-
-%changelog
-* Tue Feb 21 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.3.3-1
-+ Revision: 778541
-- version update 0.3.3
-
-* Fri Jan 20 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.3.2-1
-+ Revision: 763359
-- imported package libsidplayfp
-
