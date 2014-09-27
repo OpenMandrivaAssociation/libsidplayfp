@@ -4,8 +4,8 @@
 %define develnamestatic %mklibname sidplayfp -d -s
 
 Name:           libsidplayfp
-Version:        1.0.3
-Release:        2
+Version:        1.5.3
+Release:        1
 License:        GPLv2
 Url:		http://sourceforge.net/projects/sidplay-residfp
 Source0:	http://downloads.sourceforge.net/project/sidplay-residfp/libsidplayfp/1.0/libsidplayfp-%{version}.tar.gz
@@ -57,7 +57,7 @@ the %{name} library
 %setup -q
 
 %build
-%configure2_5x
+%configure --enable-static
 %make
 
 %install
