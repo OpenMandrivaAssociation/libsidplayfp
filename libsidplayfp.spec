@@ -5,7 +5,7 @@
 
 Name:           libsidplayfp
 Version:        1.5.3
-Release:        2
+Release:        3
 License:        GPLv2
 Url:		http://sourceforge.net/projects/sidplay-residfp
 Source0:	http://downloads.sourceforge.net/project/sidplay-residfp/libsidplayfp/1.0/libsidplayfp-%{version}.tar.gz
