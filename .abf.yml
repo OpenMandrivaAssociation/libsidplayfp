@@ -1,4 +1,5 @@
 removed_sources:
   libsidplayfp-1.0.3.tar.gz: 967426a369122b9398c60be0e7d0b78753e23f3e
-sources:
   libsidplayfp-1.5.3.tar.gz: a2ff63d71859dbf1a94199c276792101167dfca5
+sources:
+  libsidplayfp-1.8.8.tar.gz: 93afb8c86cc84c1a5d1cb67cdee7a6b7342bf4da
