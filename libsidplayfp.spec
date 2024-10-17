@@ -7,7 +7,7 @@ Name:           libsidplayfp
 Version:        1.8.8
 Release:        3
 License:        GPLv2
-Url:		http://sourceforge.net/projects/sidplay-residfp
+Url:		https://sourceforge.net/projects/sidplay-residfp
 Source0:	http://downloads.sourceforge.net/project/sidplay-residfp/libsidplayfp/1.0/libsidplayfp-%{version}.tar.gz
 Group:		System/Libraries
 Summary:        A library for the sidplay2 fork with resid-fp
