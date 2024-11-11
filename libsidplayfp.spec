@@ -11,7 +11,7 @@ Url:		https://sourceforge.net/projects/sidplay-residfp
 Source0:	https://downloads.sourceforge.net/project/sidplay-residfp/libsidplayfp/1.0/libsidplayfp-%{version}.tar.gz
 Group:		System/Libraries
 Summary:        A library for the sidplay2 fork with resid-fp
-Patch1:		libsidplayfp-1.8.8-clang.patch
+#Patch1:		libsidplayfp-1.8.8-clang.patch
 
 %description
 We aim to improve the quality of emulating the 6581
