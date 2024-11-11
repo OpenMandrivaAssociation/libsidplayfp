@@ -1,5 +1,6 @@
 %define major       0
-%define libname    %mklibname sidplayfp %{major}
+%define libname    %mklibname sidplayfp
+%define oldlibname    %mklibname sidplayfp 0
 %define libnamedev  %mklibname -d sidplayfp
 %define develnamestatic %mklibname sidplayfp -d -s
 
@@ -11,7 +12,6 @@ Url:		https://sourceforge.net/projects/sidplay-residfp
 Source0:	https://downloads.sourceforge.net/project/sidplay-residfp/libsidplayfp/1.0/libsidplayfp-%{version}.tar.gz
 Group:		System/Libraries
 Summary:        A library for the sidplay2 fork with resid-fp
-#Patch1:		libsidplayfp-1.8.8-clang.patch
 
 %description
 We aim to improve the quality of emulating the 6581
@@ -21,6 +21,7 @@ to play SID music better.
 %package -n     %{libname}
 Summary:        Libraries for %{name}
 Group:          System/Libraries
+%rename %{oldlibname}
 
 %description -n %{libname}
 We aim to improve the quality of emulating the 6581
@@ -55,27 +56,22 @@ the %{name} library
 
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 %configure --enable-static
-%make
+%make_build
 
 %install
-%makeinstall_std INSTALL_ROOT=%{buildroot}%{_prefix}
+%make_install INSTALL_ROOT=%{buildroot}%{_prefix}
 
 find %{buildroot} -type f -name '*.la' -exec rm -f {} \;
-
-%files 
-%doc AUTHORS README COPYING
-#%{_bindir}/%{name}
 
 %files -n %{libname}
 %{_libdir}/*.so.*
 
-
 %files -n %{libnamedev}
+%doc AUTHORS README COPYING
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
