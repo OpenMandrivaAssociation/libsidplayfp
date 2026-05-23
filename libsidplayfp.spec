@@ -1,26 +1,29 @@
-%define	sv_major 0
-%define	major	6
-%define	libname	%mklibname sidplayfp
-%define	oldlibname	%mklibname sidplayfp 0
-%define	libnamedev	%mklibname -d sidplayfp
-%define	develnamestatic	%mklibname sidplayfp -d -s
+%define		sv_major 0
+%define		major	6
+%define		libname	%mklibname sidplayfp
+%define		oldlibname	%mklibname sidplayfp 0
+%define		libnamedev	%mklibname -d sidplayfp
+%define		develnamestatic	%mklibname sidplayfp -d -s
 
-Summary:	A library for the sidplay2 fork with resid-fp
+Summary:		A library for the sidplay2 fork with resid-fp
 Name:	libsidplayfp
-Version:	2.15.0
-Release:	1
-License:	GPLv2+
+Version:		2.16.1
+Release:		1
+License:		GPLv2+
 Group:	Sound
 Url:		https://github.com/libsidplayfp/libsidplayfp
 Source0:	https://downloads.sourceforge.net/project/sidplay-residfp/libsidplayfp/1.0/libsidplayfp-%{version}.tar.gz
 Source100:	libsidplayfp.rpmlintrc
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	libtool-base
-BuildRequires:	slibtool
-BuildRequires:	make
-BuildRequires:	doxygen
-BuildRequires:	pkgconfig(libgcrypt)
+BuildRequires:		autoconf
+BuildRequires:		automake
+BuildRequires:		bison
+BuildRequires:		doxygen
+BuildRequires:		flex
+BuildRequires:		libtool-base
+BuildRequires:		make
+BuildRequires:		slibtool
+BuildRequires:		pkgconfig(libgcrypt)
+BuildRequires:		pkgconfig(libusb-1.0)
 
 %description
 We aim to improve the quality of emulating the 6581 and 8580 chips and
@@ -72,8 +75,8 @@ on header files.
 %package -n %{develnamestatic}
 Summary:	Library for accessing files in FITS format for C and Fortran
 Group:		Development/C
-Requires:	%{libnamedev} = %version
-Requires:	%libname = %version
+Requires:	%{libnamedev} = %{version}-%{release}
+Requires:	%{libname} = %{version}-%{release}
 Provides:	sidplayfp-devel-static = %{version}-%{release}
 
 %description -n %{develnamestatic}
@@ -93,9 +96,10 @@ This package contains the static libraries used by software that uses
 %configure --enable-static \
 %ifarch aarch64
 					--with-simd=none \
+%else
+					--with-simd=runtime \
 %endif
-					--with-gcrypt \
-					--with-hardsid
+					--with-gcrypt
 
 %make_build
 
